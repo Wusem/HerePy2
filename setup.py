@@ -26,7 +26,7 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='herepy',
+    name='herepy2',
     version=extract_metaitem('version'),
     license=extract_metaitem('license'),
     description=extract_metaitem('description'),

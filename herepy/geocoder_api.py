@@ -110,8 +110,9 @@ class GeocoderApi(HEREApi):
         street: str,
         city: str,
         country: str,
+        postal_code: str,
         lang: str = "en-US",
-    ) -> Optional[GeocoderResponse]:
+        ) -> Optional[GeocoderResponse]:
         """Geocodes with given address details
         Args:
           house_number (int):
@@ -122,6 +123,8 @@ class GeocoderApi(HEREApi):
             city name.
           country (str):
             country name.
+          postal_code (str):
+            post code.
           lang (str):
             BCP47 compliant Language Code.
         Returns:
@@ -133,7 +136,8 @@ class GeocoderApi(HEREApi):
             "qq": str.format("houseNumber={0};", house_number)
             + str.format("street={0};", street)
             + str.format("city={0};", city)
-            + str.format("country={0}", country),
+            + str.format("country={0}", country)
+            + str.format("postalCode={0}", postal_code),
             "apiKey": self._api_key,
             "lang": lang,
         }
